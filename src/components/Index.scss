@@ -1,0 +1,146 @@
+@use "../assets/scss/_mixins.scss"as *;
+@use "../assets/scss/_utilities.scss"as *;
+@use "../assets/scss/variables.scss"as *;
+
+/* Index Parent Div */
+#home {
+    display: grid;
+    grid-template-columns: 0.25fr 0.75fr;
+    @extend %full-screen;
+
+    @include media(1000px) {
+        grid-template-columns: repeat(1, 1fr);
+
+        #left-frame {
+            display: none;
+        }
+    }
+
+    #left-frame {
+        @extend %center-div;
+        color: white;
+
+        li {
+            border: 2px solid white;
+            margin: 10px 0;
+            @extend %center-div;
+
+            &:hover {
+                background: $red;
+                border-color: $red;
+            }
+
+            a {
+                padding: 20px;
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                color: white;
+                margin: 0 5px;
+                cursor: pointer;
+                @extend %center-div;
+
+                img,
+                svg {
+                    margin: 0 7px;
+                }
+            }
+        }
+    }
+
+    .loader {
+        @extend %full-screen;
+        @extend %center-div;
+    }
+
+    #main {
+        color: rgb(255, 255, 255);
+        @extend %center-div;
+        @extend %full-screen;
+        background-attachment: fixed !important;
+        // background-attachment:scroll;
+        background-size: cover !important;
+        h2 {
+            color:black;
+        }
+
+        @include media(700px) {
+            background-attachment: scroll !important;
+            background-position: 70% 65% !important;
+        }
+
+        #title {
+            background: $red;
+
+            .title-tabs {
+                display: grid;
+                text-align: center;
+                grid-template-columns: repeat(2, 50%);
+
+                .title-tab {
+                    padding: 10px;
+                }
+            }
+
+            h1 {
+                font-size: 6rem;
+                letter-spacing: 0.2rem;
+                margin: 0;
+                line-height: 4.7rem;
+                padding: 50px;
+
+                @include media(700px) {
+                    font-size: 5rem;
+                    letter-spacing: 0.2rem;
+                    text-align: left;
+                    padding: 40px 10px;
+                }
+            }
+        }
+    }
+
+    //
+    // Dark Mode
+    //
+    &.dark {
+
+        h1,
+        h2 {
+            color: black;
+        }
+
+        #left-frame {
+            li {
+                border-color: black;
+
+                &:hover {
+                    border-color: $red;
+                }
+
+                a,
+                span {
+                    color: black;
+                }
+
+                svg {
+                    filter: invert(99%) sepia(43%) saturate(151%) hue-rotate(242deg) brightness(115%) contrast(93%);
+                }
+            }
+        }
+    }
+}
+
+// animations
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

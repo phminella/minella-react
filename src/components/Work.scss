@@ -1,0 +1,124 @@
+@use "../assets/scss/_mixins.scss"as *;
+@use "../assets/scss/_utilities.scss"as *;
+@use "../assets/scss/variables.scss"as *;
+
+.work {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  @include media(1000px) {
+    min-height: 80vh;
+
+    h1 {
+      margin: 0;
+      padding: 10px 0;
+    }
+  }
+
+  .work__items {
+    list-style: none;
+    padding: 0 40px;
+    background: $light;
+    overflow: hidden;
+    margin:0 20px;
+
+    .work__item {
+      height: 573px;
+      color: white;
+      perspective: 50rem;
+
+      &__card {
+        @extend %center-div;
+        flex-wrap: wrap;
+        transition: all 0.6s ease;
+        position: absolute;
+        top: 53px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 260px;
+        height: 468px;
+        backface-visibility: hidden;
+        border: 1px solid black;
+        text-align: center;
+
+        h2 {
+          width: 80%;
+          font-size: 2.2rem;
+          line-height: 2.2rem;
+          margin: 0 2px;
+        }
+
+        h3 {
+          position: absolute;
+          bottom: 80px;
+        }
+
+        &-front {
+          background-size: contain !important;
+
+          p {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 0.95rem;
+          }
+        }
+
+        &-back {
+          transform: rotateY(180deg);
+          background: white;
+          color: #363636;
+
+          h2 {
+            width: 100%;
+            padding: 0 10px;
+          }
+
+          p {
+            text-align: left;
+            padding: 15px;
+          }
+        }
+      }
+
+      &:hover,
+      &:active {
+        .work__item__card-front {
+          transform: rotateY(180deg);
+        }
+
+        .work__item__card-back {
+          transform: rotateY(360deg);
+        }
+      }
+    }
+  }
+
+  //
+  // Dark Mode
+  //
+  &.dark {
+    background: black;
+
+    h1 {
+      color: white;
+    }
+
+    .work__items {
+      background: $dark;
+
+      .work__item__card-back {
+        background: $dark;
+        color: white;
+      }
+    }
+  }
+
+  //
+  // End Dark Mode
+  //
+}

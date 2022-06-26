@@ -1,0 +1,12 @@
+// Media Query Manager
+// 0 - 600px:       Phone
+// 600px - 900px:   Tablet Portrait
+// 900px - 1200px:  Tablet Landscape
+// 1800px+:         Desktop 
+
+// 1em = 16px
+@mixin media($breakpoint) {
+        @media only screen and (max-width: $breakpoint) { 
+            @content
+        }
+}

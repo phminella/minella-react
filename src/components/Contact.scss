@@ -1,0 +1,153 @@
+@use "../assets/scss/_mixins.scss" as *;
+@use "../assets/scss/_utilities.scss" as *;
+@use "../assets/scss/variables.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+.contact {
+    @extend %full-screen;
+    @extend %center-div;
+    font-weight: bold;
+    position: relative;
+    .contact__container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include media(1100px) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-flow: revert;
+        #contact-details {
+          grid-row: 1;
+          margin: 20px 0 10px 0;
+          .contact-details-info {
+            display: none;
+          }
+        }
+        #contact-form {
+          grid-row: 2;
+          margin-bottom: 20px;
+        }
+      }
+      color: white;
+      .contact__item {
+        @extend %center-div;
+        .form {
+          position: relative;
+          width: 500px;
+          @include media(550px) {
+            width: 100vw;
+            padding: 0 15px;
+            margin-bottom: 40px;
+          }
+          h2 {
+            font-size: 2.2rem;
+            margin: 1rem 0;
+            @include media(550px) {
+              font-size: 1.8rem;
+            }
+          }
+          .fade-enter-active,
+          .fade-leave-active {
+            transition: all 1s ease;
+            opacity: 1;
+          }
+  
+          .fade-enter-from,
+          .fade-leave-to {
+            opacity: 0;
+          }
+          .form-sent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            @extend %full-screen;
+            @extend %center-div;
+            h2 {
+              margin: 0;
+            }
+            p {
+              font-size: 1.1rem;
+            }
+          }
+          input {
+            width: 100%;
+            border: 2px solid rgb(255, 255, 255);
+            height: 70px;
+            font-size: 1.1rem;
+            background: none;
+            margin: 10px 0;
+            &:focus {
+              background: $red;
+              outline: none !important;
+              color: white;
+              transition: all 0.6s ease;
+            }
+            &::placeholder {
+              color: white;
+            }
+          }
+          #contactComments {
+            height: 10rem;
+          }
+          button {
+            width: 100%;
+            margin-top: 20px;
+            border: none;
+            background: $red;
+            color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+            &:hover {
+              background: rgb(170, 5, 82);
+              transition: all 0.6s ease;
+            }
+          }
+        }
+      }
+      #contact-details {
+        .contact-details-info {
+          margin-top: 10px;
+          @extend %center-div;
+          svg {
+            margin: 10px;
+          }
+        }
+      }
+    }
+    //
+    // Dark Moder
+    //
+    &.dark {
+      .contact__container {
+        color: $dark;
+        .contact__item {
+          input {
+            border-color: $dark;
+            &::placeholder {
+              color: $dark;
+            }
+          }
+        }
+        #contact-details {
+          .calendar,
+          .square {
+            border-color: black;
+          }
+  
+          .calendar-month {
+            border-bottom: 2px solid black;
+            button {
+              border: 2px solid black;
+              border-bottom: none;
+              color: black;
+              &.deactive {
+                background: black !important;
+                color: white;
+              }
+            }
+          }
+        }
+        svg {
+          filter: invert(99%) sepia(43%) saturate(151%) hue-rotate(242deg)
+            brightness(115%) contrast(93%);
+        }
+      }
+    }
+  }
