@@ -47,17 +47,17 @@ const Index = () => {
                 alt="" /></a>
           </li>
           <li>
-            <a href="vue-project.zip">
+            <a href="https://github.com/phminella/minella-react/tree/master" target="_blank">
               <img width="25" src="/img/icon-react.svg" alt="" /> React Project
               <img
                 height="25"
                 className={`icon-download ${darkMode ? "hidden" : ""}`}
-                src="/img/icon-download.png"
+                src="/img/icon-github.png"
                 alt="" />
               <img
                 height="25"
                 className={`icon-download ${darkMode ? "" : "hidden"}`}
-                src="/img/icon-download-dark.png"
+                src="/img/icon-github.svg"
                 alt="" /></a>
           </li>
           <li>
