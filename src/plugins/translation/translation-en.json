@@ -25,16 +25,9 @@
         "formSend": "Send",
         "formThanks1": "Thanks for your message!",
         "formThanks2": "I will reply as soon as I can.",
-        "march": "March",
-        "april": "April",
-        "sun": "Sun",
-        "mon": "Mon",
-        "tue": "Tue",
-        "wed": "Wed",
-        "thu": "Thu",
-        "fri": "Fri",
-        "sat": "Sat",
-        "available": "Available for Interview.",
-        "waiting": "Waiting for the schedule."
+        "contactNameError": "Your name is required to send the form. :)",
+        "contactEmailError": "I need your e-mail to reach you back! :)",
+        "contactCompanyError": "Company name is required. :)",
+        "contactCommentsError": "Let me know why you reaching me for. :D"              
     }
 }

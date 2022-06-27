@@ -25,16 +25,9 @@
         "formSend": "送信",
         "formThanks1": "ご連絡ありがとうございます！",
         "formThanks2": "出来るだけ早くお返事致します。",
-        "march": "3月",
-        "april": "4月",
-        "sun": "日",
-        "mon": "月",
-        "tue": "火",
-        "wed": "水",
-        "thu": "木",
-        "fri": "金",
-        "sat": "土",
-        "available": "面接可。",
-        "waiting": "予定待ち。"
+        "contactNameError": "フォームの送信にはお名前が必要です。＾＿～",
+        "contactEmailError": "返信のためにメールアドレスを教えてください。",
+        "contactCompanyError": "フォームの送信には会社名が必要です。＾＿～",
+        "contactCommentsError":   "連絡の理由を教えて下さい。＾＿～"     
     }
 }

@@ -8,7 +8,7 @@ const Contact = () => {
   let bgColor = useSelector((state: any) => state.theme.bgColor);
   let darkMode = useSelector((state: any) => state.theme.darkMode);
   // Translation Plugin
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   //
   // Form Handler
   //
@@ -21,72 +21,41 @@ const Contact = () => {
   const form = useRef<null | HTMLFormElement>(null);
   const submitFormHandler = (event: any) => {
     event.preventDefault();
-    //
     // Name
-    //
     if (!contactName) {
-      if (i18n.language === "en") {
-        // @ts-ignore
-        document.getElementById("contactName").placeholder =
-          "Your name is required to send the form. :)";
-      } else {
-        // @ts-ignore
-        document.getElementById("contactName").placeholder =
-          "フォームの送信にはお名前が必要です。＾＿～";
-      }
+      // @ts-ignore
+      document.getElementById("contactName").placeholder =
+        t("contactNameError");
       // @ts-ignore
       document.getElementById("contactName").focus();
-      //
       // Company Name
-      //
     } else if (!contactCompany) {
-      if (i18n.language === "en") {
-        // @ts-ignore
-        document.getElementById("contactCompany").placeholder =
-          "Company name is required. :)";
-      } else {
-        // @ts-ignore
-        document.getElementById("contactCompany").placeholder =
-          "フォームの送信には会社名が必要です。＾＿～";
-      }
+      // @ts-ignore
+      document.getElementById("contactCompany").placeholder =
+        t("contactCompanyError");
       // @ts-ignore
       document.getElementById("contactCompany").focus();
-      //
       // Email
-      //
     } else if (!contactEmail) {
-      if (i18n.language === "en") {
-        // @ts-ignore
-        document.getElementById("contactEmail").placeholder =
-          "I need your e-mail to reach you back! :)";
-      } else {
-        // @ts-ignore
-        document.getElementById("contactEmail").placeholder =
-          "返信のためにメールアドレスを教えてください。";
-      }
+      // @ts-ignore
+      document.getElementById("contactEmail").placeholder =
+        t("contactEmailError");
       // @ts-ignore
       document.getElementById("contactEmail").focus();
     } else if (!validEmail(contactEmail)) {
       setErrors("Valid email required.");
-      //
+      // @ts-ignore
+      document.getElementById("contactEmail").focus();
       // Additional Comments
-      //
     } else if (!contactComments) {
-      if (i18n.language === "en") {
-        // @ts-ignore
-        document.getElementById("contactComments").placeholder =
-          "Let me know why you reaching me for. :D";
-      } else {
-        // @ts-ignore
-        document.getElementById("contactComments").placeholder =
-          "連絡の理由を教えて下さい。＾＿～";
-      }
+      // @ts-ignore
+      document.getElementById("contactComments").placeholder =
+        t("contactCommentsError");
       // @ts-ignore
       document.getElementById("contactComments").focus();
     } else {
       setFormSubmitted(true);
       let emailjsForm: any = form.current;
-      console.log("got here");
       //
       // EmailJS
       //
@@ -176,7 +145,7 @@ const Contact = () => {
                   v-model="contact.email"
                   placeholder={t("formEmail")}
                 />
-                <p>{errors}</p>
+                <p><img src="/img/error.png" alt="" /> {errors}</p>
               </div>
               <div>
                 <input
