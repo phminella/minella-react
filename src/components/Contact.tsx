@@ -1,5 +1,5 @@
 import './Contact.scss';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import '../plugins/i18n';
 import { useTranslation } from "react-i18next";
@@ -42,10 +42,6 @@ const Contact = () => {
         t("contactEmailError");
       // @ts-ignore
       document.getElementById("contactEmail").focus();
-    } else if (!validEmail(contactEmail)) {
-      setErrors("Valid email required.");
-      // @ts-ignore
-      document.getElementById("contactEmail").focus();
       // Additional Comments
     } else if (!contactComments) {
       // @ts-ignore
@@ -76,13 +72,32 @@ const Contact = () => {
     }
   }
   // Valid Email
+  const isMounted = useRef(false);
+  useEffect(() => {
+    console.log(isMounted.current)
+    if (isMounted.current) {
+      const isValid = setTimeout(() => {
+        validEmail(contactEmail)
+      }, 500)
+      return () => clearTimeout(isValid)
+    }
+    else {
+      isMounted.current = true;
+    }
+  }, [setContactEmail, contactEmail]);
+  // Valid Email Function
   const validEmail = (email: string) => {
+    console.log("oi");
     var re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (re.test(email)) {
       setErrors("");
     }
-    return re.test(email);
+    else {
+      setErrors("Valid email required.");
+      // @ts-ignore
+      document.getElementById("contactEmail").focus();
+    }
   }
   return (
     <section
