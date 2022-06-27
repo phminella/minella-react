@@ -74,7 +74,6 @@ const Contact = () => {
   // Valid Email
   const isMounted = useRef(false);
   useEffect(() => {
-    console.log(isMounted.current)
     if (isMounted.current) {
       const isValid = setTimeout(() => {
         validEmail(contactEmail)
@@ -87,7 +86,6 @@ const Contact = () => {
   }, [setContactEmail, contactEmail]);
   // Valid Email Function
   const validEmail = (email: string) => {
-    console.log("oi");
     var re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (re.test(email)) {
