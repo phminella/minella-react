@@ -35,8 +35,10 @@ function App() {
         i18n.changeLanguage(localStorage.getItem('language'));
     }
 }
-  useEffect(() => scrollSpy());
-  useEffect(() => localStorageHandler(), [])
+  useEffect(() => scrollSpy(), []);
+  useEffect(() => localStorageHandler(), 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [])
   useGetData(
     "https://vuefire-849fd-default-rtdb.firebaseio.com/work.json",
     "workExperience"

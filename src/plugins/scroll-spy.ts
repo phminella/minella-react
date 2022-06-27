@@ -9,14 +9,14 @@ const scrollSpy = function () {
       sections[e.id] = e.offsetTop;
     });
   }, 500);
-
   window.onscroll = function () {
+    console.log("a");
     const scrollPosition =
       document.documentElement.scrollTop || document.body.scrollTop;
     // @ts-ignore
     for (i in sections) {
       // @ts-ignore
-      if (sections[i] - 1 <= scrollPosition && i !== "home") {
+      if (sections[i] - 10 <= scrollPosition && i !== "home") {
         if (document.querySelector(".actived")) {
           // @ts-ignore
           document.querySelector(".actived").setAttribute("class", " ");
