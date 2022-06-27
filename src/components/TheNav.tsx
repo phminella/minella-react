@@ -116,8 +116,8 @@ const TheNav = () => {
             </p>
             <p>
               <img height="20" src="/img/work/flags/japan.svg" alt="" />
-              <a href="minella-resume-japanese.pdf" download
-              >履歴書.pdf (japanese)
+              <a href="minella-resume-ミネラパウロ履歴書.xlsx" download
+              >履歴書.xlsx (japanese)
                 <img
                   height="20"
                   className={`icon-download ${darkMode ? "" : "hidden"}`}
@@ -125,7 +125,23 @@ const TheNav = () => {
                   alt="" />
                 <img
                   height="20"
-                  className={`icon-download ${darkMode ? "" : ""}`}
+                  className={`icon-download ${darkMode ? "hidden" : ""}`}
+                  src="/img/icon-download-dark.png"
+                  alt=""
+                /></a>
+            </p>
+            <p>
+              <img height="20" src="/img/work/flags/japan.svg" alt="" />
+              <a href="職務経歴書.pdf" download
+              >職務経歴書.pdf (japanese)
+                <img
+                  height="20"
+                  className={`icon-download ${darkMode ? "" : "hidden"}`}
+                  src="/img/icon-download.png"
+                  alt="" />
+                <img
+                  height="20"
+                  className={`icon-download ${darkMode ? "hidden" : ""}`}
                   src="/img/icon-download-dark.png"
                   alt=""
                 /></a>
