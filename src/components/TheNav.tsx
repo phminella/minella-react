@@ -84,20 +84,18 @@ const TheNav = () => {
             </p>
             <p>
               <img height="20" src="/img/icon-react.svg" alt="" />
-              <a href="react-project.zip"
+              <a href="https://github.com/phminella/minella-react/tree/master" target="_blank"
               >react project
                 <img
-                  height="20"
-                  className={`icon-download ${darkMode ? "" : "hidden"}`}
-                  src="/img/icon-download.png"
-                  alt=""
-                />
-                <img
-                  height="20"
-                  className={`icon-download ${darkMode ? "hidden" : ""}`}
-                  src="/img/icon-download-dark.png"
-                  alt=""
-                />
+                height="20"
+                className={`icon-download ${darkMode ? "" : "hidden"}`}
+                src="/img/icon-github.png"
+                alt="" />
+              <img
+                height="20"
+                className={`icon-download ${darkMode ? "hidden" : ""}`}
+                src="/img/icon-github.svg"
+                alt="" />
               </a>
             </p>
             <p>
