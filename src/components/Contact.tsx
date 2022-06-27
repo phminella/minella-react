@@ -19,36 +19,28 @@ const Contact = () => {
   const [contactComments, setContactComments] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const form = useRef<null | HTMLFormElement>(null);
+  //
+  // Submit
+  //
+  // Focus Input Handler
+  const inputErrorHandler = (input: string) => {
+    // @ts-ignore
+    document.getElementById(input).placeholder =
+      t(`${input}Error`);
+    // @ts-ignore
+    document.getElementById(input).focus();
+  }
+  //
   const submitFormHandler = (event: any) => {
     event.preventDefault();
-    // Name
     if (!contactName) {
-      // @ts-ignore
-      document.getElementById("contactName").placeholder =
-        t("contactNameError");
-      // @ts-ignore
-      document.getElementById("contactName").focus();
-      // Company Name
+      inputErrorHandler("contactName");
     } else if (!contactCompany) {
-      // @ts-ignore
-      document.getElementById("contactCompany").placeholder =
-        t("contactCompanyError");
-      // @ts-ignore
-      document.getElementById("contactCompany").focus();
-      // Email
+      inputErrorHandler("contactCompany");
     } else if (!contactEmail) {
-      // @ts-ignore
-      document.getElementById("contactEmail").placeholder =
-        t("contactEmailError");
-      // @ts-ignore
-      document.getElementById("contactEmail").focus();
-      // Additional Comments
+      inputErrorHandler("contactEmail");
     } else if (!contactComments) {
-      // @ts-ignore
-      document.getElementById("contactComments").placeholder =
-        t("contactCommentsError");
-      // @ts-ignore
-      document.getElementById("contactComments").focus();
+      inputErrorHandler("contactComments");
     } else {
       setFormSubmitted(true);
       let emailjsForm: any = form.current;
@@ -83,7 +75,7 @@ const Contact = () => {
     else {
       isMounted.current = true;
     }
-  }, [setContactEmail, contactEmail]);
+  }, [contactEmail]);
   // Valid Email Function
   const validEmail = (email: string) => {
     var re =
