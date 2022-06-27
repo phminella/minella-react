@@ -68,7 +68,7 @@ const TheNav = () => {
           <footer>
             <p>
               <img width="20" src="/img/icon-photoshop.png" alt="" />
-              <a href="minella-resume-design.zip">
+              <a href="minella-resume-design.zip" download>
                 mock-up file (.psd)
                 <img
                   height="20"
