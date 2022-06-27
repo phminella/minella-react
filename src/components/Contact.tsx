@@ -145,7 +145,7 @@ const Contact = () => {
                   v-model="contact.email"
                   placeholder={t("formEmail")}
                 />
-                <p><img src="/img/error.png" alt="" /> {errors}</p>
+                <p className={errors ? "" : "hidden"}><img src="/img/error.png" alt="" /> {errors}</p>
               </div>
               <div>
                 <input
