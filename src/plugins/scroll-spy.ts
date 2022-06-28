@@ -10,7 +10,6 @@ const scrollSpy = function () {
     });
   }, 500);
   window.onscroll = function () {
-    console.log("a");
     const scrollPosition =
       document.documentElement.scrollTop || document.body.scrollTop;
     // @ts-ignore
