@@ -82,6 +82,7 @@ ul {
   background: $red;
   color: white;
   padding: 5px;
+  z-index:9995;
 
   @include media(56.25em) {
     display: none;

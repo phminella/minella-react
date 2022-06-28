@@ -98,8 +98,7 @@ const Contact = () => {
       }}
     >
       <div className="built-with">
-        built with <b>CSS Grid</b><br />
-        and <b>Options API</b>
+        built with <b>CSS Grid</b>
       </div>
       <div className="contact__container">
         <div className="contact__item" id="contact-form">

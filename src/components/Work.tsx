@@ -20,8 +20,7 @@ const Work = () => {
       className={`work sections ${darkMode ? "dark" : ""}`}
     >
       <div className="built-with">
-        built with <b>Flexbox</b><br />
-        and <b>Composition API</b>
+        built with <b>Flexbox</b>
       </div>
       <h1>{t("workExperience")}</h1>
       <Swiper modules={[Virtual, Navigation]}
