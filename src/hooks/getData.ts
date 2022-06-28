@@ -13,16 +13,25 @@ interface dataArray {
     flagImg: string
 }
 
-export default async function useGetData(fetchUrl: any, actionName: any) {
+export default async function useGetData(fetchUrl: any) {
     const { i18n } = useTranslation();
     const dispatch = useDispatch();
-    // fetch data from server
-    const response: any = await fetch(fetchUrl);
-    const data = await response.json();
     let dataArray: dataArray[] = [];
-    const temp: any = await data[i18n.language];
-    for (const id in temp) {
-        dataArray = [...dataArray, temp[id]];
+    // fetch data from server
+    try {
+        const response: any = await fetch(fetchUrl);
+        //error?
+        if(!response.ok) {
+            throw new Error("hmmm.. this is not right");
+        }
+        const data = await response.json();
+        const temp: any = data[i18n.language];
+        for (const id in temp) {
+            dataArray = [...dataArray, temp[id]];
+        }
+    }
+    catch (error) {
+        console.log(error);
     }
     dispatch(setWorkExperience(dataArray))
 }

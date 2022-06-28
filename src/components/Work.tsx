@@ -4,6 +4,7 @@ import './Work.scss';
 // import required Swiper modules
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Virtual } from "swiper";
+import Spinner from './UI/Spinner';
 // Import Swiper styles
 import "swiper/css/navigation";
 import 'swiper/css';
@@ -19,6 +20,7 @@ const Work = () => {
       id="work"
       className={`work sections ${darkMode ? "dark" : ""}`}
     >
+     { workExperience.length===0 && <Spinner></Spinner> }
       <div className="built-with">
         built with <b>Flexbox</b>
       </div>
