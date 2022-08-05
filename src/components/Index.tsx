@@ -187,11 +187,7 @@ const Index = () => {
             <li>
               <div>
                 <img src="/img/icon-pdf.svg" alt="" />
-                <a
-                  href="minella-resume-english.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="minella-resume-english.pdf" download>
                   Resume
                 </a>
               </div>
@@ -199,11 +195,7 @@ const Index = () => {
             <li>
               <div>
                 <img src="/img/icon-excel.svg" alt="" />
-                <a
-                  href="ミネラパウロ履歴書.xlsx"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="ミネラパウロ履歴書.xlsx" download>
                   履歴書
                 </a>
               </div>
@@ -211,11 +203,7 @@ const Index = () => {
             <li>
               <div>
                 <img src="/img/icon-pdf.svg" alt="" />
-                <a
-                  href="職務経歴書.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="/職務経歴書.pdf" download>
                   職務経歴書
                 </a>
               </div>

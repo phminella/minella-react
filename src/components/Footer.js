@@ -54,11 +54,7 @@ const Footer = () => {
             <div className="list-img">
               <img src="/img/icon-pdf.svg" alt="" />
             </div>{" "}
-            <a
-              href="https://minella-vue.firebaseapp.com/minella-resume-english.pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="minella-resume-english.pdf" download>
               Resume
             </a>
           </li>
@@ -66,11 +62,7 @@ const Footer = () => {
             <div className="list-img">
               <img src="/img/icon-excel.svg" alt="" />
             </div>{" "}
-            <a
-              href="https://minella-vue.firebaseapp.com/minella-resume-english.pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="ミネラパウロ履歴書.xlsx" download>
               履歴書
             </a>
           </li>
@@ -78,11 +70,7 @@ const Footer = () => {
             <div className="list-img">
               <img src="/img/icon-pdf.svg" alt="" />
             </div>{" "}
-            <a
-              href="https://minella-vue.firebaseapp.com/minella-resume-english.pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="職務経歴書.pdf" download>
               職務経歴書
             </a>
           </li>
