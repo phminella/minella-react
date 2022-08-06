@@ -108,7 +108,6 @@ export const IndexStyle = styled.section`
           font-size: 7rem;
           line-height: 5.5rem;
           font-weight: 900;
-          text-align: center;
           color: var(--h1-light);
           &.title-sub {
             font-size: 7.5rem;
@@ -121,16 +120,14 @@ export const IndexStyle = styled.section`
       //
       .title-japanese h2 {
         font-size: 3.8rem;
+        line-height: 3.8rem;
         writing-mode: vertical-rl;
         text-orientation: upright;
-        margin-left: -18px;
       }
       // frontend developer
       .title-frontend {
         font-size: 3.2rem;
         line-height: 3.2rem;
-        width: 100%;
-        text-align: center;
       }
       ul {
         li {
@@ -148,6 +145,11 @@ export const IndexStyle = styled.section`
         }
       }
     }
+    @media screen and (max-width: 830px) {
+      .title .title-english h1 {
+        margin-left: -2.2rem;
+      }
+    }
     @media screen and (max-width: 550px) {
       .title {
         .title-english h1 {
@@ -160,7 +162,7 @@ export const IndexStyle = styled.section`
         }
         .title-japanese h2 {
           font-size: 2.2rem;
-          margin-left: -11px;
+          line-height: 2.2rem;
         }
         .title-frontend {
           font-size: 1.9rem;

@@ -116,7 +116,7 @@ const Index = () => {
             className="title-japanese"
             style={{ marginTop: `-${scrollPosition * 2}px` }}
           >
-            <h2>履歴書</h2>
+          <h2>履歴書</h2>
           </div>
           {/* 
           Icon List 

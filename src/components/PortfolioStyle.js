@@ -25,7 +25,7 @@ export const PortfolioStyle = styled.section`
     padding: 20px 35px 20px 20px;
     @media screen and (max-width: 860px) {
       grid-template-columns: 1fr;
-      padding: 5px 20px 5px 5px;
+      padding: 5px;
     }
     .portfolio-video {
       position: relative;
