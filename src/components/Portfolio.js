@@ -1,6 +1,6 @@
 import { PortfolioStyle } from "./PortfolioStyle";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 const Portfolio = () => {
   // Localization
@@ -9,7 +9,19 @@ const Portfolio = () => {
   //
   // dark mode handler
   let darkMode = useSelector((state) => state.theme.darkMode);
-  const [hovered, setHovered] = useState("");
+  //
+  // Video Handler
+  //
+  const [videoLoading, setVideoLoading] = useState(false);
+  const vueVideo = useRef(null);
+  const kapimaVideo = useRef(null);
+  const loaderHandler = (action, el) => {
+    if (action === "enter") {
+      el === "kapima" ? kapimaVideo.current.play() : vueVideo.current.play();
+    } else {
+      el === "kapima" ? kapimaVideo.current.pause() : vueVideo.current.pause();
+    }
+  };
   return (
     <PortfolioStyle id="portfolio-section" className={darkMode ? "dark" : ""}>
       <h1>
@@ -20,24 +32,20 @@ const Portfolio = () => {
       <div className="portfolio">
         <div
           className="portfolio-video"
-          onMouseEnter={() => setHovered("kapima")}
-          onMouseLeave={() => setHovered("")}
-          onTouchStart={() => setHovered("kapima")}
-          onTouchEnd={() => setHovered("")}
+          onMouseEnter={() => loaderHandler("enter", "kapima")}
+          onMouseLeave={() => loaderHandler("leave", "kapima")}
+          onTouchStart={() => loaderHandler("enter", "kapima")}
+          onTouchEnd={() => loaderHandler("leave", "kapima")}
         >
-          {hovered !== "kapima" ? (
-            <img src="video/kapima-placeholder.png" alt="kapima" />
-          ) : (
-            <video
-              poster="video/kapima-placeholder.png"
-              autoPlay
-              preload="auto"
-              muted
-            >
-              <source src="video/kapima.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
+          <video
+            poster="video/kapima-placeholder.png"
+            preload="auto"
+            ref={kapimaVideo}
+            muted
+          >
+            <source src="video/kapima.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="portfolio-card">
             <div>
               <a
@@ -59,23 +67,24 @@ const Portfolio = () => {
         </div>
         <div
           className="portfolio-video"
-          onMouseEnter={() => setHovered("vue")}
-          onMouseLeave={() => setHovered("")}
-          onTouchStart={() => setHovered("vue")}
-          onTouchEnd={() => setHovered("")}
+          onMouseEnter={() => loaderHandler("enter", "vue")}
+          onMouseLeave={() => loaderHandler("leave", "vue")}
+          onTouchStart={() => loaderHandler("enter", "vue")}
+          onTouchEnd={() => loaderHandler("leave", "vue")}
         >
-          {hovered !== "vue" ? (
-            <img src="video/vue-placeholder.png" alt="vue" />
-          ) : (
-            <video
-              poster="img/transparent.png"
-              autoPlay
-              preload="auto"
-              muted
-            >
-              <source src="video/vue.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <video
+            poster="video/vue-placeholder.png"
+            preload="auto"
+            ref={vueVideo}
+            muted
+          >
+            <source src="video/vue.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {videoLoading && (
+            <div className="video-loader">
+              <img src="img/loader.svg" alt="loader" />
+            </div>
           )}
           <div className="portfolio-card">
             <div>

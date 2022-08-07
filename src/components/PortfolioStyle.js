@@ -44,19 +44,20 @@ export const PortfolioStyle = styled.section`
       img {
         width: 100%;
         border-radius: 20px;
-        object-fit: inherit;
       }
-      video {
-        background: transparent url("img/loader.svg") no-repeat 0 0;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+      video[poster] {
+        width: 100%;
       }
       &:hover {
         .portfolio-card {
           transform: scale(1);
         }
+      }
+      .video-loader {
+        position: absolute;
+        top: 50%; /* position the top  edge of the element at the middle of the parent */
+        left: 50%; /* position the left edge of the element at the middle of the parent */
+        transform: translate(-50%, -50%);
       }
       .portfolio-card {
         position: absolute;
