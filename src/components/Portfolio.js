@@ -25,7 +25,7 @@ const Portfolio = () => {
           {hovered !== "kapima" ? (
             <img src="video/kapima-placeholder.png" alt="kapima" />
           ) : (
-            <video poster="video/kapima-placeholder.png" autoPlay muted>
+            <video poster="video/kapima-placeholder.png" autoPlay preload="auto" muted>
               <source src="video/kapima.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -35,9 +35,9 @@ const Portfolio = () => {
               <a href="https://github.com/phminella/kapima" target="_blank" rel="noreferrer">
                 <img src="img/icon-github.svg" alt="github" />
               </a>
-              {/* <a href="http://google.com" target="_blank" rel="noreferrer"> */}
+              <a href="https://kapima.herokuapp.com/" target="_blank" rel="noreferrer">
                 <img src="img/icon-link.svg" alt="link" />
-              {/* </a> */}
+              </a>
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@ const Portfolio = () => {
           {hovered !== "vue" ? (
             <img src="video/vue-placeholder.png" alt="vue" />
           ) : (
-            <video poster="video/vue-placeholder.png" autoPlay muted>
+            <video poster="video/vue-placeholder.png" autoPlay preload="auto" muted>
               <source src="video/vue.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
