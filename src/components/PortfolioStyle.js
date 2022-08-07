@@ -13,6 +13,17 @@ export const PortfolioStyle = styled.section`
     span {
       font-size: 0.7em;
       color: lightblue;
+      &.portfolio-title-tap {
+        display: none;
+      }
+      @media screen and (max-width: 860px) {
+        &.portfolio-title-tap {
+          display: block;
+        }
+        &.portfolio-title-hover {
+          display: none;
+        }
+      }
     }
   }
   .portfolio {
@@ -33,6 +44,14 @@ export const PortfolioStyle = styled.section`
       img {
         width: 100%;
         border-radius: 20px;
+        object-fit: inherit;
+      }
+      video {
+        background: transparent url("img/loader.svg") no-repeat 0 0;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
       }
       &:hover {
         .portfolio-card {
